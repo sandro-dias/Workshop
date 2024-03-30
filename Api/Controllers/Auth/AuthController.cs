@@ -10,6 +10,9 @@ namespace Api.Controllers.Auth
     [Route("v1")]
     public class AuthController : ControllerBase
     {
+        /// <summary>
+        /// Rota para autenticar uma oficina.
+        /// </summary>
         [HttpGet]
         [Route("api/authentication")]
         [ProducesResponseType(StatusCodes.Status200OK)]

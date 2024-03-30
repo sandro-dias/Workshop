@@ -30,7 +30,7 @@ namespace UnitTests.Infrastructure.Services.CreateWorkingDay
         public async Task ShouldCreateWorkingDaySuccessfully()
         {
             //Arrange
-            var fakeInput = _fixture.Build<CreateWorkingDayInput>().With(x => x.Date, new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.AddDays(4).Day)).Create();
+            var fakeInput = _fixture.Build<CreateWorkingDayInput>().With(x => x.Date, new DateTime(2024, 04, 02)).Create();
             _unitOfWork.Setup(x => x.WorkingDayRepository.FirstOrDefaultAsync(It.IsAny<GetWorkingDayByWorkshopSpecification>(), It.IsAny<CancellationToken>()));
             _unitOfWork.Setup(x => x.WorkingDayRepository.AddAsync(It.IsAny<WorkingDay>(), It.IsAny<CancellationToken>())).ReturnsAsync(_fixture.Create<WorkingDay>());
 
