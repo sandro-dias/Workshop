@@ -1,0 +1,64 @@
+<mxfile host="Electron" modified="2024-01-26T00:20:06.557Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.21 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="bSEimXMpioYTNqJoEFqh" version="22.1.21" type="device">
+  <diagram id="uGVMl1xX1tlx1PZlIVU0" name="Página-1">
+    <mxGraphModel dx="2753" dy="1476" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="mb94NTZVq2RcIFub4-cU-85" value="OficinaController" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="-971" y="286" width="173" height="89" as="geometry" />
+        </mxCell>
+        <mxCell id="mb94NTZVq2RcIFub4-cU-86" value="CriarOficinaUseCase" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="-1178" y="526.5" width="173" height="89" as="geometry" />
+        </mxCell>
+        <mxCell id="mb94NTZVq2RcIFub4-cU-87" value="OficinaRepository" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="-1144" y="950" width="173" height="89" as="geometry" />
+        </mxCell>
+        <mxCell id="mb94NTZVq2RcIFub4-cU-100" value="CadastrarServiçoUseCase" style="rounded=0;html=1;fillColor=#FFFFFF;fontSize=10;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="-992" y="526.5" width="173" height="89" as="geometry" />
+        </mxCell>
+        <mxCell id="mb94NTZVq2RcIFub4-cU-101" value="CadastrarClienteUseCase" style="rounded=0;html=1;fillColor=#FFFFFF;fontSize=10;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="-441.5" y="526.5" width="173" height="89" as="geometry" />
+        </mxCell>
+        <mxCell id="mb94NTZVq2RcIFub4-cU-102" value="ServiçoRepository" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="-762" y="950" width="173" height="89" as="geometry" />
+        </mxCell>
+        <mxCell id="mb94NTZVq2RcIFub4-cU-103" value="ClienteRepository" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="-579" y="950" width="173" height="89" as="geometry" />
+        </mxCell>
+        <mxCell id="mb94NTZVq2RcIFub4-cU-115" value="ExcluirServiçoUseCase" style="rounded=0;html=1;fillColor=#FFFFFF;fontSize=10;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="-624" y="526.5" width="173" height="89" as="geometry" />
+        </mxCell>
+        <mxCell id="mb94NTZVq2RcIFub4-cU-142" value="CriarDiaDeTrabalhoService" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="-992" y="718" width="173" height="89" as="geometry" />
+        </mxCell>
+        <mxCell id="mb94NTZVq2RcIFub4-cU-154" value="ObterServiçosDoDiaUseCase" style="rounded=0;html=1;fillColor=#FFFFFF;fontSize=10;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="-807" y="526.5" width="173" height="89" as="geometry" />
+        </mxCell>
+        <mxCell id="QUgl19QgOK7yhoq3DMXc-1" value="Domínio" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="-412" y="-87" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="QUgl19QgOK7yhoq3DMXc-6" value="Serviço&lt;br&gt;&lt;br&gt;+ IdServiço&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; text-align: left;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;+ IdCliente&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; text-align: left;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;+ IdOficina&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; text-align: left;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;+ Data&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; text-align: left;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;+ Carga&lt;/span&gt;&amp;nbsp;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="-675" y="49" width="114" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="QUgl19QgOK7yhoq3DMXc-7" value="Cliente&lt;br&gt;&lt;br&gt;+ IdCliente&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; text-align: left;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;+ Nome&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; text-align: left;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;+ CPF&lt;/span&gt;&amp;nbsp;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="-541" y="49" width="114" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="QUgl19QgOK7yhoq3DMXc-8" value="Oficina&lt;br&gt;&lt;br&gt;+ IdOficina&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; text-align: left;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;+ Data&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; text-align: left;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;+ CargaDisponivel&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="-407" y="49" width="114" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="QUgl19QgOK7yhoq3DMXc-9" value="Dia de trabalho&lt;br&gt;&lt;br&gt;+ IdDiaDeTrabalho&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; text-align: left;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;+ IdOficina&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; text-align: left;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;+ Data&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; text-align: left;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;+ CargaDisponível&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="-274" y="49" width="114" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="QUgl19QgOK7yhoq3DMXc-10" value="Trabalho (Enum)&lt;br&gt;&lt;br&gt;+ Alinhamento de rodas = 1&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; text-align: left;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;+ Lavagem = 2&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; text-align: left;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;+ Troca de óleo = 3&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; text-align: left;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;+ Revisão básica = 5&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); padding: 0px; margin: 0px; text-align: left;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;+ Revisão completa = 8&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="-141" y="49" width="155" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="QUgl19QgOK7yhoq3DMXc-11" value="DiaDeTrabalhoRepository" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="-952" y="950" width="173" height="89" as="geometry" />
+        </mxCell>
+        <mxCell id="QUgl19QgOK7yhoq3DMXc-13" value="Obter carga para os próximos 5 dias úteis" style="rounded=0;html=1;fillColor=#FFFFFF;fontSize=10;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-259" y="526" width="173" height="89" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
