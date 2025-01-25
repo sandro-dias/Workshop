@@ -27,21 +27,21 @@ namespace UnitTests.Infrastructure.Services.CreateWorkingDay
         }
 
         //TODO: REVISAR UNIT TEST
-        //[Fact]
-        //public async Task ShouldCreateWorkingDaySuccessfully()
-        //{
-        //    //Arrange
-        //    var fakeInput = _fixture.Build<CreateWorkingDayInput>().With(x => x.Date, new DateTime(2024, 04, 02)).Create();
-        //    _unitOfWork.Setup(x => x.WorkingDayRepository.FirstOrDefaultAsync(It.IsAny<GetWorkingDayByWorkshopSpecification>(), It.IsAny<CancellationToken>()));
-        //    _unitOfWork.Setup(x => x.WorkingDayRepository.AddAsync(It.IsAny<WorkingDay>(), It.IsAny<CancellationToken>())).ReturnsAsync(_fixture.Create<WorkingDay>());
+        [Fact]
+        public async Task ShouldCreateWorkingDaySuccessfully()
+        {
+            //Arrange
+            var fakeInput = _fixture.Build<CreateWorkingDayInput>().With(x => x.Date, new DateTime(2024, 04, 02)).Create();
+            _unitOfWork.Setup(x => x.WorkingDayRepository.FirstOrDefaultAsync(It.IsAny<GetWorkingDayByWorkshopSpecification>(), It.IsAny<CancellationToken>()));
+            _unitOfWork.Setup(x => x.WorkingDayRepository.AddAsync(It.IsAny<WorkingDay>(), It.IsAny<CancellationToken>())).ReturnsAsync(_fixture.Create<WorkingDay>());
 
-        //    //Act
-        //    var result = await _service.CreateWorkingDay(fakeInput);
+            //Act
+            var result = await _service.CreateWorkingDay(fakeInput);
 
-        //    //Assert
-        //    result.Should().NotBeNull();
-        //    _unitOfWork.Verify(x => x.CommitAsync(It.IsAny<CancellationToken>()), Times.Once);
-        //}
+            //Assert
+            result.Should().NotBeNull();
+            _unitOfWork.Verify(x => x.CommitAsync(It.IsAny<CancellationToken>()), Times.Once);
+        }
 
         [Fact]
         public async Task ShouldReturnWorkingDayAlreadyExists()

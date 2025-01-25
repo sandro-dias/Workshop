@@ -47,7 +47,7 @@ namespace Infrastructure.DependencyInjection
             services.AddDbContext<WorkshopContext>(
                 (builder) =>
                 {
-                    builder.UseSqlServer(configuration.GetConnectionString("LeonidasWorkshopContext"));
+                    builder.UseSqlServer(configuration.GetConnectionString("WorkshopContext"));
                 });
 
             return services;

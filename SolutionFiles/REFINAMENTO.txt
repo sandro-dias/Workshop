@@ -1,7 +1,18 @@
-version: '3.4'
+# Como usar o banco: sqlserver: docker-compose up -d
+127.0.0.1
+usuário: SA
+senha: "1q2w3e4r@#$"
 
-services:
+# Como subir o Dockerfile
+-> sudo docker build -t oficina .
+-> sudo docker run -d -p 8080:80 --name oficina oficina:latest
+-> Rodando a aplicação: https://localhost:5001/swagger/index.html
+-> sudo docker inspect <container_id>
+-> docker ps
 
+-> http://172.17.0.2:8080
+
+# Subir banco junto com a aplicação:
   sqlserver:
     container_name: sqlserver
     image: mcr.microsoft.com/mssql/server
@@ -20,17 +31,3 @@ services:
         sleep 30
         opt/mssql/tools/bin/sqlcmd -U sa -P 1q2w3e4r@#$ -l 30 -e -i /Volume/CREATE_DATABASE.sql
         sleep infinity
-
-  api:
-    image: ${DOCKER_REGISTRY-}api
-    build:
-      context: .
-      dockerfile: Api/Dockerfile
-    environment:
-      DbServer: "sqlserver"
-      DbPort: "1433"
-      DbUser: "SA"
-      Password: "1q2w3e4r"
-      Database: "OFICINA"
-    ports:
-      - "8000:8000"
