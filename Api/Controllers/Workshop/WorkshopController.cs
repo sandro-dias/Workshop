@@ -19,6 +19,9 @@ namespace Api.Controllers.PostWorkshop
         private readonly ICreateWorkshopUseCase _postWorkshopUseCase = postWorkshopUseCase;
         private readonly IGetWorkshopWorkloadUseCase _getWorkshopWorkload = getWorkshopWorkload;
 
+        /// <summary>
+        /// Rota para criar uma oficina.
+        /// </summary>
         [HttpPost]
         [Route("api/create-workshop/")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -38,6 +41,9 @@ namespace Api.Controllers.PostWorkshop
             }
         }
 
+        /// <summary>
+        /// Rota para buscar a carga de trabalho da oficina nos próximas 5 dias úteis
+        /// </summary>
         [HttpGet]
         [Authorize]
         [Route("api/get-workshop-workload/{workShopId}")]

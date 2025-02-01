@@ -8,6 +8,9 @@ using Application.UseCases.Customer.CreateCustomer.Validator;
 using Application.UseCases.GetWorkshopWorkload;
 using Application.UseCases.Service.CreateService;
 using Application.UseCases.Service.DeleteService;
+using Application.UseCases.Service.GetReport;
+using Application.UseCases.Service.GetReport.Input;
+using Application.UseCases.Service.GetReport.Validator;
 using Application.UseCases.Service.GetServices;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
@@ -37,12 +40,14 @@ namespace Application.DependencyInjection
             services.AddScoped<ICreateCustomerUseCase, CreateCustomerUseCase>();
             services.AddScoped<IGetServicesUseCase, GetServicesUseCase>();
             services.AddScoped<IDeleteServiceUseCase, DeleteServiceUseCase>();
+            services.AddScoped<IGetReportUseCase, GetReportUseCase>();
         }
 
         private static void AddValidators(this IServiceCollection services)
         {
             services.AddTransient<IValidator<CreateWorkshopInput>, CreateWorkshopInputValidator>();
             services.AddTransient<IValidator<CreateCustomerInput>, CreateCustomerInputValidator>();
+            services.AddTransient<IValidator<GetReportInput>, GetReportInputValidator>();
         }
     }
 }

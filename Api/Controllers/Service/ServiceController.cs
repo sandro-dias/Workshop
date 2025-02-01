@@ -1,6 +1,8 @@
 ﻿using Application.UseCases.Service.CreateService;
 using Application.UseCases.Service.CreateService.Input;
 using Application.UseCases.Service.DeleteService;
+using Application.UseCases.Service.GetReport;
+using Application.UseCases.Service.GetReport.Input;
 using Application.UseCases.Service.GetServices;
 using Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
@@ -9,19 +11,24 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
 namespace Api.Controllers.Service
 {
     [ApiController]
     [Route("v1")]
-    public class ServiceController(ILogger<ServiceController> logger, ICreateServiceUseCase createServiceUseCase, IGetServicesUseCase getServicesUseCase, IDeleteServiceUseCase deleteServiceUseCase) : ControllerBase
+    public class ServiceController(ILogger<ServiceController> logger, ICreateServiceUseCase createServiceUseCase, IGetServicesUseCase getServicesUseCase, IDeleteServiceUseCase deleteServiceUseCase, IGetReportUseCase getReportUseCase) : ControllerBase
     {
         private readonly ILogger<ServiceController> _logger = logger;
         private readonly ICreateServiceUseCase _createServiceUseCase = createServiceUseCase;
         private readonly IGetServicesUseCase _getServicesUseCase = getServicesUseCase;
         private readonly IDeleteServiceUseCase _deleteServiceUseCase = deleteServiceUseCase;
+        private readonly IGetReportUseCase _getReportUseCase = getReportUseCase;
 
+        /// <summary>
+        /// Rota para criar um serviço em uma oficina.
+        /// </summary>
         [HttpPost]
         [Authorize]
         [Route("api/create-service/{workShopId}/{customerId}")]
@@ -43,6 +50,9 @@ namespace Api.Controllers.Service
             }
         }
 
+        /// <summary>
+        /// Rota para buscar um serviço de uma oficina através do seu ID.
+        /// </summary>
         [HttpGet]
         [Authorize]
         [Route("api/get-services/{workShopId}")]
@@ -63,6 +73,32 @@ namespace Api.Controllers.Service
             }
         }
 
+        /// <summary>
+        /// Rota para buscar um relatório dos serviços das oficinas em um intervalo de datas.
+        /// </summary>
+        [HttpGet]
+        [Authorize]
+        [Route("api/get-services-report")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetReport([FromQuery] GetReportInput input)
+        {
+            try
+            {
+                var servicesList = await _getReportUseCase.ExecuteAsync(input);
+                return Ok(servicesList);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("[{ClassName}] It was not possible to get the services report. The message returned was: {@Message}", nameof(ServiceController), ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao buscar o relatório de serviços no banco de dados.");
+            }
+        }
+
+        /// <summary>
+        /// Rota para deletar um serviço de uma oficina através do seu ID.
+        /// </summary>
         [HttpDelete]
         [Authorize]
         [Route("api/delete-service/{serviceId}")]

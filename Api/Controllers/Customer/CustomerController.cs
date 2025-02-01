@@ -23,6 +23,9 @@ namespace Api.Controllers.Customer
             _createCustomerUseCase = createServiceUseCase;
         }
 
+        /// <summary>
+        /// Rota para criar um cliente de uma oficina.
+        /// </summary>
         [HttpPost]
         [Authorize]
         [Route("api/create-customer")]

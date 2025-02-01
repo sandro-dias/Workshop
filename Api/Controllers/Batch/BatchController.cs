@@ -10,9 +10,8 @@ using System.Threading.Tasks;
 namespace Api.Controllers.Batch
 {
     /// <summary>
-    /// Essa Controller é exclusivamente para casos de manipulação de dados na API e troubleshooting
+    /// Rota para testes e troubleshooting dos dias de trabalho
     /// </summary>
-
     [ApiController]
     [Route("v1")]
     public class BatchController : ControllerBase

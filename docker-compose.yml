@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+
+  sqlserver:
+    container_name: sqlserver
+    image: mcr.microsoft.com/mssql/server
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "1q2w3e4r@#$"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - "./CREATE_DATABASE.sql:/Infrastructure/Data/Volume/"
+    command:
+      - /bin/bash
+      - -c
+      - |
+        /opt/mssql/bin/sqlserver &
+        sleep 30
+        opt/mssql/tools/bin/sqlcmd -U sa -P 1q2w3e4r@#$ -l 30 -e -i /Volume/CREATE_DATABASE.sql
+        sleep infinity
+
+  api:
+    image: ${DOCKER_REGISTRY-}api
+    build:
+      context: .
+      dockerfile: Api/Dockerfile
+    environment:
+      DbServer: "sqlserver"
+      DbPort: "1433"
+      DbUser: "SA"
+      Password: "1q2w3e4r"
+      Database: "OFICINA"
+    ports:
+      - "8000:8000"
